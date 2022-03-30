@@ -1,31 +1,40 @@
-import { GetStaticProps } from "next";
+import BuySell from "../components/BuySell";
+import ScrollToTop from "../components/ScrollToTop";
+import Hero from "../components/Hero";
+import Blogs from "../components/Blogs";
+//import { GetStaticProps } from "next";
 import styled from "styled-components";
-import ArticleList from "../components/ArticleList";
-import { server } from "../config";
-import { IndexPageProps } from "../Interfaces";
+//import ArticleList from "../components/ArticleList";
+//import { server } from "../config";
+//import { IndexPageProps } from "../Interfaces";
 
-const Hero = styled.div`
+/* const Hero = styled.div`
   height: 30vh;
   display: flex;
   justify-content: center;
   align-items: center;
   background: #fff;
-`;
+`; */
 
-const Heading = styled.h1`
+/* const Heading = styled.h1`
   color: #000;
   font-size: 10rem;
   font-weight: 900;
-`;
+`; */
 
-export default function Home({ data }: IndexPageProps) {
+/* export default function Home({ data }: IndexPageProps) { */
+export default function Home() {
   //console.log(data);
   return (
     <>
-      <Hero>
+      <ScrollToTop />
+      <Hero />
+      <BuySell />
+      <Blogs />
+      {/*  <Hero>
         <Heading>NEXT</Heading>
       </Hero>
-      <ArticleList data={data} />
+      <ArticleList data={data} /> */}
     </>
   );
 }
@@ -44,7 +53,7 @@ export default function Home({ data }: IndexPageProps) {
 //   };
 // };
 
-export const getStaticProps: GetStaticProps = async () => {
+/* export const getStaticProps: GetStaticProps = async () => {
   const res = await fetch(`${server}/api/articles`);
   const data = await res.json();
 
@@ -53,4 +62,4 @@ export const getStaticProps: GetStaticProps = async () => {
       data,
     },
   };
-};
+}; */
